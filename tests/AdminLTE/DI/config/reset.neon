@@ -1,0 +1,9 @@
+php:
+	date.timezone: Europe/Prague
+
+application:
+	scanDirs: false
+
+extensions:
+	- GrandMedia\AdminLTE\DI\AdminLTEExtension
+	- Kdyby\Translation\DI\TranslationExtension
