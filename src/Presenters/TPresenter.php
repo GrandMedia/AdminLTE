@@ -23,6 +23,9 @@ trait TPresenter
 	/** @var \GrandMedia\AdminLTE\Components\FooterFactory */
 	protected $footerFactory;
 
+	/** @var string */
+	protected $baseLayout = __DIR__ . '/templates/@basicLayout.latte';
+
 	public function injectFactories(
 		HeaderFactory $headerFactory,
 		SidebarFactory $sidebarFactory,
