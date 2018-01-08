@@ -1,8 +1,7 @@
 <!-- Navbar Right Menu -->
-<div class="navbar-custom-menu">
-	<ul class="nav navbar-nav">
-		{foreach $indexes as $index}
-			{control $index}
-		{/foreach}
-	</ul>
-</div>
+<ul class="sidebar-menu" data-widget="tree">
+	<li class="header">MENU</li>
+	{foreach $indexes as $index}
+		{control $index}
+	{/foreach}
+</ul>
