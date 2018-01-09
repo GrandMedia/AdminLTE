@@ -8,7 +8,7 @@ use GrandMedia\AdminLTE\Components\HeaderFactory;
 use GrandMedia\AdminLTE\Components\SidebarFactory;
 use GrandMedia\Widgets\Widget;
 
-trait TPresenter
+trait TwoColumnPresenter
 {
 
 	/** @var \GrandMedia\AdminLTE\Components\HeaderFactory */
@@ -24,7 +24,7 @@ trait TPresenter
 	protected $footerFactory;
 
 	/** @var string */
-	protected $baseLayout = __DIR__ . '/templates/@basicLayout.latte';
+	protected $baseLayout = __DIR__ . '/templates/@twoColumn.layout.latte';
 
 	public function injectFactories(
 		HeaderFactory $headerFactory,
