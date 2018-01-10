@@ -9,7 +9,6 @@ use GrandMedia\AdminLTE\Components\MainMenuFactory;
 use GrandMedia\AdminLTE\Components\NavigationBarFactory;
 use GrandMedia\AdminLTE\Components\NavigationBarMenuFactory;
 use GrandMedia\AdminLTE\Components\SidebarFactory;
-use GrandMedia\AdminLTE\Forms\FormFactory;
 use Nette\Configurator;
 use Nette\DI\Container;
 use Tester\Assert;
@@ -45,8 +44,6 @@ final class AdminLTEExtensionTest extends \Tester\TestCase
 		/** @var \GrandMedia\Widgets\Items $sidebarItems */
 		$sidebarItems = $container->getService('sidebarItems');
 		Assert::same(1, \count($sidebarItems->getIndexes()));
-
-		$container->getByType(FormFactory::class);
 	}
 
 	private function createContainer(?string $configFile): Container

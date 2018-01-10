@@ -15,10 +15,8 @@
 	"require": {
 		"php": ">=7.1",
 		"grand-media/widgets": "@dev",
-		"kdyby/translation": "^2.4",
 		"nette/application": "^2.4",
-		"nette/di": "^2.4",
-		"nette/forms": "^2.4"
+		"nette/di": "^2.4"
 	},
 	"require-dev": {
 		"grand-media/coding-standard": "^1.0",

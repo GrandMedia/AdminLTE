@@ -6,4 +6,3 @@ application:
 
 extensions:
 	- GrandMedia\AdminLTE\DI\AdminLTEExtension
-	- Kdyby\Translation\DI\TranslationExtension
