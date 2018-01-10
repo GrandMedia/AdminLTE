@@ -13,6 +13,9 @@
 	{/block}
 </head>
 <body class="hold-transition login-page">
+
+{block flashes}{/block}
+
 <div class="login-box">
 	<div class="login-logo">
 		{ifset logo}{include logo}{/ifset}
@@ -25,8 +28,7 @@
 </div>
 <!-- /.login-box -->
 
-{block scripts}
-{/block}
+{block scripts}{/block}
 </body>
 </html>
 

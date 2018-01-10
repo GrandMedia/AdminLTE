@@ -12,11 +12,14 @@
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	{/block}
 </head>
-<body class="{ifset bodyClass}{include bodyClass|stripHtml}{/ifset}">
+<body class="sidebar-mini {ifset bodyClass}{include bodyClass|stripHtml}{/ifset}">
 <div class="wrapper">
 	<header class="main-header">
 		{control header}
 	</header>
+
+	{block flashes}{/block}
+
 	<!-- Left side column. contains the logo and sidebar -->
 	<aside class="main-sidebar">
 		<section class="sidebar">
@@ -25,11 +28,11 @@
 	</aside>
 
 	<!-- Content Wrapper. Contains page content -->
-	<div class="content-wrapper">
+	<div class="content-wrapper {ifset contentClass}{include contentClass|stripHtml}{/ifset}" n:snippet="content">
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
 			{control contentHeader}
-			{ifset contentHeader}{include contentHeader}{/ifset}
+			{block contentHeader}{/block}
 		</section>
 
 		<!-- Main content -->
