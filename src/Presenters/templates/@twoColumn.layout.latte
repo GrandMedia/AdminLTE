@@ -15,7 +15,17 @@
 <body class="sidebar-mini {ifset bodyClass}{include bodyClass|stripHtml}{/ifset}">
 <div class="wrapper">
 	<header class="main-header">
-		{control header}
+		{block logo}{/block}
+
+		<nav class="navbar navbar-static-top">
+			{block navigationBar}
+				<!-- Sidebar toggle button-->
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+					<span class="sr-only">Toggle navigation</span>
+				</a>
+
+				{control navigationBarMenu}
+			{/block}
 	</header>
 
 	{block flashes}{/block}
@@ -23,7 +33,9 @@
 	<!-- Left side column. contains the logo and sidebar -->
 	<aside class="main-sidebar">
 		<section class="sidebar">
-			{control sidebar}
+			{block sidebar}
+				{control mainMenu}
+			{/block}
 		</section>
 	</aside>
 
@@ -31,7 +43,6 @@
 	<div class="content-wrapper {ifset contentClass}{include contentClass|stripHtml}{/ifset}" n:snippet="content">
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
-			{control contentHeader}
 			{block contentHeader}{/block}
 		</section>
 
@@ -45,12 +56,11 @@
 
 	<!-- Main Footer -->
 	<footer class="main-footer">
-		{control footer}
+		{block footer}{/block}
 	</footer>
 </div>
 <!-- ./wrapper -->
 
-{block scripts}
-{/block}
+{block scripts}{/block}
 </body>
 </html>

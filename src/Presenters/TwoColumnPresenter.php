@@ -2,61 +2,39 @@
 
 namespace GrandMedia\AdminLTE\Presenters;
 
-use GrandMedia\AdminLTE\Components\ContentHeaderFactory;
-use GrandMedia\AdminLTE\Components\FooterFactory;
-use GrandMedia\AdminLTE\Components\HeaderFactory;
-use GrandMedia\AdminLTE\Components\SidebarFactory;
+use GrandMedia\AdminLTE\Components\MainMenuFactory;
+use GrandMedia\AdminLTE\Components\NavigationBarMenuFactory;
 use GrandMedia\Widgets\Widget;
 
 trait TwoColumnPresenter
 {
 
-	/** @var \GrandMedia\AdminLTE\Components\HeaderFactory */
-	protected $headerFactory;
+	/** @var \GrandMedia\AdminLTE\Components\MainMenuFactory */
+	protected $mainMenuFactory;
 
-	/** @var \GrandMedia\AdminLTE\Components\SidebarFactory */
-	protected $sidebarFactory;
-
-	/** @var \GrandMedia\AdminLTE\Components\ContentHeaderFactory */
-	protected $contentHeaderFactory;
-
-	/** @var \GrandMedia\AdminLTE\Components\FooterFactory */
-	protected $footerFactory;
+	/** @var \GrandMedia\AdminLTE\Components\NavigationBarMenuFactory */
+	protected $navigationBarMenuFactory;
 
 	/** @var string */
 	protected $baseLayout = __DIR__ . '/templates/@twoColumn.layout.latte';
 
 	public function injectFactories(
-		HeaderFactory $headerFactory,
-		SidebarFactory $sidebarFactory,
-		ContentHeaderFactory $contentHeaderFactory,
-		FooterFactory $footerFactory
+		MainMenuFactory $mainMenuFactory,
+		NavigationBarMenuFactory $navigationBarMenuFactory
 	): void
 	{
-		$this->headerFactory = $headerFactory;
-		$this->sidebarFactory = $sidebarFactory;
-		$this->contentHeaderFactory = $contentHeaderFactory;
-		$this->footerFactory = $footerFactory;
+		$this->mainMenuFactory = $mainMenuFactory;
+		$this->navigationBarMenuFactory = $navigationBarMenuFactory;
 	}
 
-	protected function createComponentHeader(): Widget
+	protected function createComponentMainMenu(): Widget
 	{
-		return $this->headerFactory->create();
+		return $this->mainMenuFactory->create();
 	}
 
-	protected function createComponentSidebar(): Widget
+	protected function createComponentNavigationBarMenu(): Widget
 	{
-		return $this->sidebarFactory->create();
-	}
-
-	protected function createComponentContentHeader(): Widget
-	{
-		return $this->contentHeaderFactory->create();
-	}
-
-	protected function createComponentFooter(): Widget
-	{
-		return $this->footerFactory->create();
+		return $this->navigationBarMenuFactory->create();
 	}
 
 }

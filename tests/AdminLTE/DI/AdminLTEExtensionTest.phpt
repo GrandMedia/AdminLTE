@@ -2,13 +2,8 @@
 
 namespace GrandMediaTests\AdminLTE\DI;
 
-use GrandMedia\AdminLTE\Components\ContentHeaderFactory;
-use GrandMedia\AdminLTE\Components\FooterFactory;
-use GrandMedia\AdminLTE\Components\HeaderFactory;
 use GrandMedia\AdminLTE\Components\MainMenuFactory;
-use GrandMedia\AdminLTE\Components\NavigationBarFactory;
 use GrandMedia\AdminLTE\Components\NavigationBarMenuFactory;
-use GrandMedia\AdminLTE\Components\SidebarFactory;
 use Nette\Configurator;
 use Nette\DI\Container;
 use Tester\Assert;
@@ -25,25 +20,10 @@ final class AdminLTEExtensionTest extends \Tester\TestCase
 	{
 		$container = $this->createContainer(null);
 
-		$container->getByType(ContentHeaderFactory::class);
-		$container->getByType(FooterFactory::class);
-		$container->getByType(HeaderFactory::class);
 		$container->getByType(MainMenuFactory::class);
-		$container->getByType(NavigationBarFactory::class);
 		$container->getByType(NavigationBarMenuFactory::class);
-		$container->getByType(SidebarFactory::class);
 
-		/** @var \GrandMedia\Widgets\Items $headerItems */
-		$headerItems = $container->getService('headerItems');
-		Assert::same(1, \count($headerItems->getIndexes()));
-
-		/** @var \GrandMedia\Widgets\Items $navigationBarItems */
-		$navigationBarItems = $container->getService('navigationBarItems');
-		Assert::same(1, \count($navigationBarItems->getIndexes()));
-
-		/** @var \GrandMedia\Widgets\Items $sidebarItems */
-		$sidebarItems = $container->getService('sidebarItems');
-		Assert::same(1, \count($sidebarItems->getIndexes()));
+		Assert::true(true);
 	}
 
 	private function createContainer(?string $configFile): Container
