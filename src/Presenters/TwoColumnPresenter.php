@@ -2,25 +2,25 @@
 
 namespace GrandMedia\AdminLTE\Presenters;
 
-use GrandMedia\AdminLTE\Components\MainMenuFactory;
-use GrandMedia\AdminLTE\Components\NavigationBarMenuFactory;
+use GrandMedia\AdminLTE\Components\MainMenuWidgetFactory;
+use GrandMedia\AdminLTE\Components\TopBarWidgetFactory;
 use GrandMedia\Widgets\Widget;
 
 trait TwoColumnPresenter
 {
 
-	/** @var \GrandMedia\AdminLTE\Components\MainMenuFactory */
+	/** @var \GrandMedia\AdminLTE\Components\MainMenuWidgetFactory */
 	protected $mainMenuFactory;
 
-	/** @var \GrandMedia\AdminLTE\Components\NavigationBarMenuFactory */
+	/** @var \GrandMedia\AdminLTE\Components\TopBarWidgetFactory */
 	protected $navigationBarMenuFactory;
 
 	/** @var string */
 	protected $baseLayout = __DIR__ . '/templates/@twoColumn.layout.latte';
 
 	public function injectFactories(
-		MainMenuFactory $mainMenuFactory,
-		NavigationBarMenuFactory $navigationBarMenuFactory
+		MainMenuWidgetFactory $mainMenuFactory,
+		TopBarWidgetFactory $navigationBarMenuFactory
 	): void
 	{
 		$this->mainMenuFactory = $mainMenuFactory;

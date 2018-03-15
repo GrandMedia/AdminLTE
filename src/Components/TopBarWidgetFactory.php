@@ -5,7 +5,7 @@ namespace GrandMedia\AdminLTE\Components;
 use GrandMedia\Widgets\Items;
 use GrandMedia\Widgets\Widget;
 
-final class NavigationBarMenuFactory
+final class TopBarWidgetFactory
 {
 
 	/** @var \GrandMedia\Widgets\Items */
@@ -18,7 +18,7 @@ final class NavigationBarMenuFactory
 
 	public function create(): Widget
 	{
-		return new Widget($this->items, __DIR__ . '/templates/navigationBarMenu.latte');
+		return new Widget($this->items, __DIR__ . '/templates/topBarWidget.latte');
 	}
 
 }

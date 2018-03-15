@@ -5,7 +5,7 @@ namespace GrandMedia\AdminLTE\Components;
 use GrandMedia\Widgets\Items;
 use GrandMedia\Widgets\Widget;
 
-final class MainMenuFactory
+final class MainMenuWidgetFactory
 {
 
 	/** @var \GrandMedia\Widgets\Items */
@@ -18,7 +18,7 @@ final class MainMenuFactory
 
 	public function create(): Widget
 	{
-		return new Widget($this->items, __DIR__ . '/templates/mainMenu.latte');
+		return new Widget($this->items, __DIR__ . '/templates/mainMenuWidget.latte');
 	}
 
 }

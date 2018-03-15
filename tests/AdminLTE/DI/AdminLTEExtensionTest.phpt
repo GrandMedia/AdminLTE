@@ -2,8 +2,8 @@
 
 namespace GrandMediaTests\AdminLTE\DI;
 
-use GrandMedia\AdminLTE\Components\MainMenuFactory;
-use GrandMedia\AdminLTE\Components\NavigationBarMenuFactory;
+use GrandMedia\AdminLTE\Components\MainMenuWidgetFactory;
+use GrandMedia\AdminLTE\Components\TopBarWidgetFactory;
 use Nette\Configurator;
 use Nette\DI\Container;
 use Tester\Assert;
@@ -20,8 +20,8 @@ final class AdminLTEExtensionTest extends \Tester\TestCase
 	{
 		$container = $this->createContainer(null);
 
-		$container->getByType(MainMenuFactory::class);
-		$container->getByType(NavigationBarMenuFactory::class);
+		$container->getByType(MainMenuWidgetFactory::class);
+		$container->getByType(TopBarWidgetFactory::class);
 
 		Assert::true(true);
 	}

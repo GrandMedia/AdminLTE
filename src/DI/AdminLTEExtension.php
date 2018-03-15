@@ -2,8 +2,8 @@
 
 namespace GrandMedia\AdminLTE\DI;
 
-use GrandMedia\AdminLTE\Components\MainMenuFactory;
-use GrandMedia\AdminLTE\Components\NavigationBarMenuFactory;
+use GrandMedia\AdminLTE\Components\MainMenuWidgetFactory;
+use GrandMedia\AdminLTE\Components\TopBarWidgetFactory;
 use GrandMedia\Widgets\Items;
 
 final class AdminLTEExtension extends \Nette\DI\CompilerExtension
@@ -15,8 +15,8 @@ final class AdminLTEExtension extends \Nette\DI\CompilerExtension
 
 		//Components
 		$components = [
-			'mainMenu' => MainMenuFactory::class,
-			'navigationBarMenu' => NavigationBarMenuFactory::class,
+			'mainMenu' => MainMenuWidgetFactory::class,
+			'navigationBarMenu' => TopBarWidgetFactory::class,
 		];
 
 		foreach ($components as $name => $class) {
