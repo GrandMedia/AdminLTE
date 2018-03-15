@@ -1,0 +1,8 @@
+<h1>
+	<a n:foreach="$links as $link" href="{$link->getLink()}">
+		<small n:tag-if="!$iterator->first">
+			<i n:if="$link->getIcon()" class="fa fa-{$link->getIcon()}" title="{$link->getTitle()}"></i>
+			{$link->getTitle()}
+		</small>
+	</a>
+</h1>

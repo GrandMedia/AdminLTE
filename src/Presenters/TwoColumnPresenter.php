@@ -2,6 +2,7 @@
 
 namespace GrandMedia\AdminLTE\Presenters;
 
+use GrandMedia\AdminLTE\Components\Breadcrumb;
 use GrandMedia\AdminLTE\Components\MainMenuWidgetFactory;
 use GrandMedia\AdminLTE\Components\TopBarWidgetFactory;
 use GrandMedia\Widgets\Widget;
@@ -10,31 +11,36 @@ trait TwoColumnPresenter
 {
 
 	/** @var \GrandMedia\AdminLTE\Components\MainMenuWidgetFactory */
-	protected $mainMenuFactory;
+	protected $mainMenuWidgetFactory;
 
 	/** @var \GrandMedia\AdminLTE\Components\TopBarWidgetFactory */
-	protected $navigationBarMenuFactory;
+	protected $topBarWidgetFactory;
 
 	/** @var string */
 	protected $baseLayout = __DIR__ . '/templates/@twoColumn.layout.latte';
 
 	public function injectFactories(
-		MainMenuWidgetFactory $mainMenuFactory,
-		TopBarWidgetFactory $navigationBarMenuFactory
+		MainMenuWidgetFactory $mainMenuWidgetFactory,
+		TopBarWidgetFactory $topBarWidgetFactory
 	): void
 	{
-		$this->mainMenuFactory = $mainMenuFactory;
-		$this->navigationBarMenuFactory = $navigationBarMenuFactory;
+		$this->mainMenuWidgetFactory = $mainMenuWidgetFactory;
+		$this->topBarWidgetFactory = $topBarWidgetFactory;
 	}
 
-	protected function createComponentMainMenu(): Widget
+	protected function createComponentMainMenuWidget(): Widget
 	{
-		return $this->mainMenuFactory->create();
+		return $this->mainMenuWidgetFactory->create();
 	}
 
-	protected function createComponentNavigationBarMenu(): Widget
+	protected function createComponentTopBarWidget(): Widget
 	{
-		return $this->navigationBarMenuFactory->create();
+		return $this->topBarWidgetFactory->create();
+	}
+
+	protected function createComponentBreadcrumb(): Breadcrumb
+	{
+		return new Breadcrumb();
 	}
 
 }
