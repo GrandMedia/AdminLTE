@@ -15,8 +15,8 @@ final class AdminLTEExtension extends \Nette\DI\CompilerExtension
 
 		//Components
 		$components = [
-			'mainMenu' => MainMenuWidgetFactory::class,
-			'navigationBarMenu' => TopBarWidgetFactory::class,
+			'mainMenuWidget' => MainMenuWidgetFactory::class,
+			'topBarWidget' => TopBarWidgetFactory::class,
 		];
 
 		foreach ($components as $name => $class) {
