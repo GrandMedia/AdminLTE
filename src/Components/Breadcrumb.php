@@ -8,7 +8,7 @@ final class Breadcrumb extends \Nette\Application\UI\Control
 {
 
 	/** @var \GrandMedia\AdminLTE\Components\Link[] */
-	private $links;
+	private $links = [];
 
 	public function render(): void
 	{
