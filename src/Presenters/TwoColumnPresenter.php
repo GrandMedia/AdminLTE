@@ -2,7 +2,6 @@
 
 namespace GrandMedia\AdminLTE\Presenters;
 
-use GrandMedia\AdminLTE\Components\Breadcrumb;
 use GrandMedia\AdminLTE\Components\MainMenuWidgetFactory;
 use GrandMedia\AdminLTE\Components\TopBarWidgetFactory;
 use GrandMedia\Widgets\Widget;
@@ -10,13 +9,19 @@ use GrandMedia\Widgets\Widget;
 trait TwoColumnPresenter
 {
 
-	/** @var \GrandMedia\AdminLTE\Components\MainMenuWidgetFactory */
+	/**
+	 * @var \GrandMedia\AdminLTE\Components\MainMenuWidgetFactory
+	 */
 	protected $mainMenuWidgetFactory;
 
-	/** @var \GrandMedia\AdminLTE\Components\TopBarWidgetFactory */
+	/**
+	 * @var \GrandMedia\AdminLTE\Components\TopBarWidgetFactory
+	 */
 	protected $topBarWidgetFactory;
 
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	protected $baseLayout = __DIR__ . '/templates/@twoColumn.layout.latte';
 
 	public function injectFactories(
@@ -36,11 +41,6 @@ trait TwoColumnPresenter
 	protected function createComponentTopBarWidget(): Widget
 	{
 		return $this->topBarWidgetFactory->create();
-	}
-
-	protected function createComponentBreadcrumb(): Breadcrumb
-	{
-		return new Breadcrumb();
 	}
 
 }
