@@ -12,7 +12,7 @@
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	{/block}
 </head>
-<body class="sidebar-mini {ifset bodyClass}{include bodyClass|stripHtml}{/ifset}">
+<body class="sidebar-mini{ifset $bodyClass} {$bodyClass}{/ifset}">
 <div class="wrapper">
 	<header class="main-header">
 		{block logo}{/block}
@@ -41,7 +41,7 @@
 	</aside>
 
 	<!-- Content Wrapper. Contains page content -->
-	<div class="content-wrapper {ifset contentClass}{include contentClass|stripHtml}{/ifset}" n:snippet="content">
+	<div class="content-wrapper{ifset $contentClass} {$contentClass}{/ifset}" n:snippet="content">
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
 			{block contentHeader}{/block}
