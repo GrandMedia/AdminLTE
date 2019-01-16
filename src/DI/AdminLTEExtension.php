@@ -32,8 +32,8 @@ final class AdminLTEExtension extends \Nette\DI\CompilerExtension
 			$components = $containerBuilder->addDefinition($name . 'Components')
 				->setType(Components::class)
 				->setAutowired(false);
-			foreach ($config[$name] as $position => $factory) {
-				$components->addSetup('add', [$position, $factory]);
+			foreach ($config[$name] as $component) {
+				$components->addSetup('add', [$component[0], $component[1]]);
 			}
 
 			$containerBuilder->addDefinition($this->prefix($name . 'Factory'))
