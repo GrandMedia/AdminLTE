@@ -1,6 +1,6 @@
 <h1>
 	<a n:foreach="$links as $link" href="{plink $link->getDestination()}">
-		<i n:if="$iterator->first" class="fa fa-{$icon}" title="{$link->getTitle()}"></i>
+		<i n:if="$iterator->first" class="fa {$icon}" title="{$link->getTitle()}"></i>
 		<small n:tag-if="!$iterator->first">
 			{$link->getTitle()}
 		</small>
