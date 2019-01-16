@@ -2,29 +2,42 @@
 
 namespace GrandMedia\AdminLTE\DI;
 
-use GrandMedia\AdminLTE\Components\MainMenuWidgetFactory;
-use GrandMedia\AdminLTE\Components\TopBarWidgetFactory;
-use GrandMedia\Widgets\Items;
+use GrandMedia\AdminLTE\Components\MainMenuFactory;
+use GrandMedia\AdminLTE\Components\TopBarFactory;
+use GrandMedia\Widgets\Components;
 
 final class AdminLTEExtension extends \Nette\DI\CompilerExtension
 {
 
+	/**
+	 * @var mixed[]
+	 */
+	private $defaults = [
+		'mainMenu' => [],
+		'topBar' => [],
+	];
+
 	public function loadConfiguration(): void
 	{
+		$config = $this->validateConfig($this->defaults);
 		$containerBuilder = $this->getContainerBuilder();
 
 		//Components
-		$components = [
-			'mainMenuWidget' => MainMenuWidgetFactory::class,
-			'topBarWidget' => TopBarWidgetFactory::class,
+		$widgets = [
+			'mainMenu' => MainMenuFactory::class,
+			'topBar' => TopBarFactory::class,
 		];
 
-		foreach ($components as $name => $class) {
-			$containerBuilder->addDefinition($name . 'Items')
-				->setType(Items::class)
+		foreach ($widgets as $name => $class) {
+			$components = $containerBuilder->addDefinition($name . 'Components')
+				->setType(Components::class)
 				->setAutowired(false);
+			foreach ($config[$name] as $position => $factory) {
+				$components->addSetup('add', [$position, $factory]);
+			}
+
 			$containerBuilder->addDefinition($this->prefix($name . 'Factory'))
-				->setFactory($class, ['@' . $name . 'Items']);
+				->setFactory($class, [$components]);
 		}
 	}
 

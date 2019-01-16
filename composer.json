@@ -17,7 +17,7 @@
 	},
 	"require": {
 		"php": ">=7.1",
-		"grand-media/widgets": "^1.0",
+		"grand-media/widgets": "^2.0",
 		"nette/application": "^2.4",
 		"nette/di": "^2.4"
 	},

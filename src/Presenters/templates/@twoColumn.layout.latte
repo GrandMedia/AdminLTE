@@ -12,7 +12,7 @@
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	{/block}
 </head>
-<body class="sidebar-mini{ifset $bodyClass} {$bodyClass}{/ifset}">
+<body class="sidebar-mini{ifset $bodyClass}{$bodyClass}{/ifset}">
 <div class="wrapper">
 	<header class="main-header">
 		{block logo}{/block}
@@ -24,7 +24,7 @@
 					<span class="sr-only">Toggle navigation</span>
 				</a>
 
-				{control topBarWidget}
+				{control topBar}
 			{/block}
 		</nav>
 	</header>
@@ -35,13 +35,13 @@
 	<aside class="main-sidebar">
 		<section class="sidebar">
 			{block sidebar}
-				{control mainMenuWidget}
+				{control mainMenu}
 			{/block}
 		</section>
 	</aside>
 
 	<!-- Content Wrapper. Contains page content -->
-	<div class="content-wrapper{ifset $contentClass} {$contentClass}{/ifset}" n:snippet="content">
+	<div class="content-wrapper{ifset $contentClass}{$contentClass}{/ifset}" n:snippet="content">
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
 			{block contentHeader}{/block}
